@@ -26,6 +26,7 @@ const handler = NextAuth({
             id: user.userId,
             uuid: user.user_uuid,
             name: user.name,
+            email:user.email,
             isAdmin: user.isAdmin,
             accessToken: user.token,
           };
@@ -36,7 +37,7 @@ const handler = NextAuth({
     }),
   ],
 
-  pages: { signIn: "/auth" },
+  pages: { signIn: "/auth/login" },
   session: { strategy: "jwt" },
   secret: process.env.NEXTAUTH_SECRET,
 
